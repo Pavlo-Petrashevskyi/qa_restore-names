@@ -14,9 +14,9 @@ function restoreNames(users) {
   }
 
   for (const user of users) {
-    // if (typeof user !== 'object' || Array.isArray(user) || !user) {
-    //   throw new Error('User must be an object with fullName');
-    // }
+    if (typeof user !== 'object' || Array.isArray(user) || !user) {
+      throw new Error('User must be an object with fullName');
+    }
 
     if (!user.firstName || typeof user.firstName !== 'string') {
       [user.firstName] = user.fullName.split(' ');
